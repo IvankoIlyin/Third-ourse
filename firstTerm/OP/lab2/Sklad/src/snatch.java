@@ -6,8 +6,7 @@ public class snatch {
     ivanov ivanov;
     petrov petrov;
     nechiporuk nechiporuk;
-    goSnatch goSnatch;
-
+    int countSklad,countBuffer;
     snatch(){
 
         sklad = new stuff[50];
@@ -15,9 +14,19 @@ public class snatch {
         for(int i=0;i<sklad.length;i++){
             sklad[i]=new stuff("Tovar"+String.valueOf(i+1), Math.random()*100,i+1);
         }
-        goSnatch=new goSnatch();
-        goSnatch.start();
+       GoSnatch();
 
+
+    }
+
+    public void GoSnatch(){
+        done=1;
+        ivanov = new ivanov();
+        petrov = new petrov();
+        nechiporuk = new nechiporuk();
+        countSklad=0;
+        countBuffer=0;
+        ivanov.start();
 
     }
 
@@ -30,30 +39,36 @@ public class snatch {
 
         @Override
         public void run(){
-            int i= 0;
-            synchronized (stuffBuffer) {
-                while (done == 1) {
-                    if (sklad[i].id % 5 == 0) {
-                        done = 2;
-                        petrov = new petrov();
-                        petrov.start();
-                    }
-                    if (sklad[i].name != "0") {
-                        stuffBuffer[i] = new stuff(sklad[i].name, sklad[i].price, sklad[i].id);
-                        System.out.println("Ivanov snatch from sklad " + stuffBuffer[i].name);
-                        sklad[i].name = "0";
-                        i++;
-                    }
+                while (true) {
+                    if (done == 1) {
+                        synchronized (stuffBuffer) {
+                            if (sklad[countSklad].name != "0" && sklad[countSklad].id % 5 != 0) {
+                                stuffBuffer[countBuffer] = new stuff(sklad[countSklad].name, sklad[countSklad].price, sklad[countSklad].id);
+                                System.out.println("Ivanov snatch from sklad " + stuffBuffer[countBuffer].name);
+                                sklad[countSklad].name = "0";
+                                countBuffer++;
+                                countSklad++;
 
-                    try {
-                        ivanov.sleep(500);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
+                            }
+                            if (sklad[countSklad].name != "0" && sklad[countSklad].id % 5 == 0) {
+                                stuffBuffer[countBuffer] = new stuff(sklad[countSklad].name, sklad[countSklad].price, sklad[countSklad].id);
+                                System.out.println("Ivanov snatch from sklad " + stuffBuffer[countBuffer].name);
+                                sklad[countSklad].name = "0";
+                                countSklad++;
+                                done = 2;
+                                petrov.start();
+                            }
+
+                            try {
+                                ivanov.sleep(500);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+
+
+                        }
                     }
-
-
                 }
-            }
         }
 
 
@@ -69,15 +84,14 @@ public class snatch {
         @Override
         public void run() {
             int i = 0;
-            while (done==2) {
+            while (done == 2) {
                 synchronized (stuffBuffer) {
-                    System.out.println(done);
+                    System.out.println("Petrov loaded stuff into the carr " + stuffBuffer[i].name);
                     if (i == 4) {
                         done = 3;
-                        nechiporuk=new nechiporuk();
+                        countBuffer = 0;
                         nechiporuk.start();
                     }
-                    System.out.println("Petrov loaded stuff into the carr " + stuffBuffer[i].name);
                     i++;
 
                     try {
@@ -86,9 +100,9 @@ public class snatch {
                         throw new RuntimeException(e);
                     }
 
+
                 }
             }
-
 
         }
     }
@@ -97,48 +111,23 @@ public class snatch {
 
         @Override
         public void run() {
-            if (done==3) {
+            while (done == 3) {
                 synchronized (stuffBuffer) {
-                    int price=0;
-                    for(int i =0;i<stuffBuffer.length;i++){
-                        price+=stuffBuffer[i].price;
+                    int price = 0;
+                    for (int i = 0; i < stuffBuffer.length; i++) {
+                        price += stuffBuffer[i].price;
                     }
                     System.out.println("Nechiporuk calculated the price of stuff = " + price);
                     done = 1;
-                    ivanov = new ivanov();
-                    ivanov.start();
 
-                    try {
-                        petrov.sleep(500);
-                    } catch (InterruptedException e) {
-                        throw new RuntimeException(e);
-                    }
 
                 }
             }
 
-
         }
 
     }
 
-    class goSnatch extends Thread{
-
-        @Override
-        public void run(){
-            done = 1;
-
-            while (true) {
-                ivanov = new ivanov();
-                petrov = new petrov();
-                nechiporuk = new nechiporuk();
-                ivanov.start();
-                petrov.start();
-                nechiporuk.start();
-            }
-        }
-
-    }
 
 
 }

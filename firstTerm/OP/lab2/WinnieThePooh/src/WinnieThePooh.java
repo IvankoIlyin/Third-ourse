@@ -36,8 +36,8 @@ public class WinnieThePooh {
         bee7 = new Bee((w/3-w/size)/2,2*h/3+(h/3-h/size)/2,w/size,"bee7",(w/3-w/size)/2,2*h/3+(h/3-h/size)/2);
         bee8 = new Bee(w/3+(w/3-w/size)/2,2*h/3+(h/3-h/size)/2,w/size,"bee8",w/3+(w/3-w/size)/2,2*h/3+(h/3-h/size)/2);
         bee9 = new Bee(2*w/3+(w/3-w/size)/2,2*h/3+(h/3-h/size)/2,w/size,"bee9",2*w/3+(w/3-w/size)/2,2*h/3+(h/3-h/size)/2);
-        int winnieChecPointx = getRandomNumberInRange(0,w);
-        int winnieChecPointy = getRandomNumberInRange(0,h);
+        int winnieChecPointx = getRandomNumberInRange(0,w/2);
+        int winnieChecPointy = getRandomNumberInRange(0,h/2);
         while(winnieChecPointx>w || winnieChecPointy>h){
             winnieChecPointx = getRandomNumberInRange(0,w);
             winnieChecPointy = getRandomNumberInRange(0,h);
@@ -59,10 +59,8 @@ public class WinnieThePooh {
         Bee[] bees = {bee1,bee2,bee3,bee4,bee5,bee6,bee7,bee8,bee9};
         for(int i=0; i<bees.length;i++){
             bees[i].start();
-            bees[i].setPriority(1);
         }
         winnie.start();
-        winnie.setPriority(2);
     }
 
 
@@ -110,13 +108,13 @@ public class WinnieThePooh {
                 body.setBounds(x + getRandomNumberInRange(-1*changeW, changeW), y + getRandomNumberInRange(-1*changeH, changeH), size, size);
                 double x2 = winnie.x;
                 double y2 = winnie.y;
-                if(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2))<=winnie.r+10){
+                if(Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2))<=winnie.r+30){
                     winnieDied=true;
                 }
-                double a = winnie.r+10;
+                double a = winnie.r;
                 System.out.println(name+" "+ Math.sqrt((x-x2)*(x-x2)+(y-y2)*(y-y2))+ " "+ a);
                 try {
-                    Bee.sleep(300);
+                    Bee.sleep(100);
                 } catch (InterruptedException e) {
                     throw new RuntimeException(e);
                 }
