@@ -19,4 +19,8 @@ public class Song {
         return time;
     }
 
+    public String getStyle(){
+        return style;
+    }
+
 }

@@ -1,40 +1,37 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Disk {
-    private List<Song> songs;
-    private int durationPlayList;
+    public List<Song> songs = new ArrayList<Song>();
+    private List<Song> byTime = new ArrayList<Song>();
+    public int durationPlayList;
 
-    Disk() {
-        List<Song> songs = new ArrayList<Song>();
-    }
-
-    private void findDyration() {
+    public void findDyration() {
         durationPlayList = 0;
         for (int i = 0; i < songs.size(); i++) {
             durationPlayList += songs.get(i).getTime();
         }
     }
-
-    private void printPlayList() {
+    public void printPlayList() {
         for (int i = 0; i < songs.size(); i++) {
             songs.get(i).printSong();
         }
     }
-
-    private List<Song> findByTime(double min, double max) {
-        List<Song> current = new ArrayList<Song>();
+    public void printFindingByTime(){
+        for (int i = 0; i < byTime.size(); i++) {
+            byTime.get(i).printSong();
+        }
+    }
+    public void findByTime(double min, double max) {
         for (int i = 0; i < songs.size(); i++) {
             if (songs.get(i).getTime() >= min && songs.get(i).getTime() <= max) {
-                current.add(songs.get(i));
+                byTime.add(songs.get(i));
             }
         }
-
-        return current;
     }
-
-    private void sortByStyle(){
-        
+    public void sortByStyle(){
+        songs.sort((a,b) -> a.getStyle().compareTo(b.getStyle()));
     }
 
 
