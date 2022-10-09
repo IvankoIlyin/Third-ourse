@@ -14,14 +14,11 @@ public class Disk {
     private JSONArray disk = new JSONArray();
     private String path = "./src/disk.json";
 
-    public void printPlayList() {
+    public List<Song> printPlayList() {
         for (int i = 0; i < songs.size(); i++) {
             songs.get(i).printSong(disk);
         }
-        durationPlayList = 0;
-        for (int i = 0; i < songs.size(); i++) {
-            durationPlayList += songs.get(i).getTime();
-        }
+
         System.out.println("Duration of Playlist: " + durationPlayList);
         JSONObject duration = new JSONObject();
         duration.put("Duration:", durationPlayList);
@@ -32,9 +29,16 @@ public class Disk {
         } catch (IOException e) {
             e.printStackTrace();
         }
+        return songs;
     }
-
-    public void printFindingByTime(double min, double max) {
+    public double calculateDuration(){
+        durationPlayList = 0;
+        for (int i = 0; i < songs.size(); i++) {
+            durationPlayList += songs.get(i).getTime();
+        }
+        return durationPlayList;
+    }
+    public List<Song> printFindingByTime(double min, double max) {
         for (int i = 0; i < songs.size(); i++) {
             if (songs.get(i).getTime() >= min && songs.get(i).getTime() <= max) {
                 byTime.add(songs.get(i));
@@ -49,11 +53,12 @@ public class Disk {
             e.printStackTrace();
         }
 
+        return byTime;
     }
-
     public void sortByStyle() {
         songs.sort((a, b) -> a.getStyle().compareTo(b.getStyle()));
     }
+
 
 
 }

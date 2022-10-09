@@ -58,7 +58,8 @@ public class main {
         disk.songs.add(l);
 
 
-        disk.printPlayList();
+        disk.printFindingByTime(3.0,3.30);
+
 
 
     }

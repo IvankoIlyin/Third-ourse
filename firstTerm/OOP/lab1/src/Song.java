@@ -29,6 +29,7 @@ public class Song {
         disk.add(song);
     }
 
+    public String getName(){return name;}
     public double getTime() {
         return time;
     }
