@@ -1,0 +1,16 @@
+﻿  clientF.cpp
+  The contents of <variant> are available only with C++17 or later.
+D:\University\Third-ourse\firstTerm\os\lab1\clientF\clientF\compfuncs.hpp(7,31): error C2429: для функция языка "nested-namespace-definition" нужен флаг компилятора "/std:c++17"
+D:\University\Third-ourse\firstTerm\os\lab1\clientF\clientF\compfuncs.hpp(13,30): error C2039: "variant": не является членом "std".
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\iostream(19): message : см. объявление "std"
+D:\University\Third-ourse\firstTerm\os\lab1\clientF\clientF\compfuncs.hpp(13,5): error C2061: синтаксическая ошибка: идентификатор "variant"
+D:\University\Third-ourse\firstTerm\os\lab1\clientF\clientF\compfuncs.hpp(15,19): error C2631: "op_group": класс или перечисление нельзя определить в шаблоне псевдонима
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(21,1): error C2988: неопознанное объявление или определение шаблона
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(21,1): error C2059: синтаксическая ошибка: <end Parse>
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(21,1): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(22,1): error C2988: неопознанное объявление или определение шаблона
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(22,1): error C2059: синтаксическая ошибка: attribute specifier
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(22,66): error C2143: синтаксическая ошибка: отсутствие ";" перед "{"
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(22,66): error C2447: {: отсутствует заголовок функции (возможно, используется формальный список старого типа)
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\ratio(28,1): error C2631: "_Safe_mult": класс или перечисление нельзя определить в шаблоне псевдонима
+D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\__msvc_chrono.hpp(29,1): fatal  error C1903: не удается восстановить после предыдущих ошибок; остановка компиляции

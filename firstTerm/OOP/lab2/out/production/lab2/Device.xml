@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Device>
+    <Сomponent id="1">
+        <Name>AMD Ryzen 5 4500 3.6(4.1)GHz 8MB sAM4 Box</Name>
+        <Origin>USA</Origin>
+        <Price>3599</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <EnergyConsumption>65</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>processor</ComponentGroup>
+            <Ports>AM4</Ports>
+        </Type>
+        <Critical>true</Critical>
+    </Сomponent>
+
+    <Сomponent id="2">
+        <Name>Asus 27" TUF Gaming VG27AQ Black</Name>
+        <Origin>China</Origin>
+        <Price>14999</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <EnergyConsumption>27</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>output monitor</ComponentGroup>
+            <Ports>usb</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
+    <Сomponent id="3">
+        <Name>HATOR Starfall Outemu Red</Name>
+        <Origin>Pakistan</Origin>
+        <Price>1459</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>input keyboard</ComponentGroup>
+            <Ports>usb</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
+    <Сomponent id="4">
+        <Name>Deepcool GAMMAXX 300</Name>
+        <Origin>China</Origin>
+        <Price>729</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <EnergyConsumption>130</EnergyConsumption>
+            <Cooler>true</Cooler>
+            <ComponentGroup>cooler</ComponentGroup>
+            <Ports>4 pin PWM</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
+    <Сomponent id="5">
+        <Name>Kingston NV1 500GB M.2</Name>
+        <Origin>USA</Origin>
+        <Price>1869</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>ssd</ComponentGroup>
+            <Ports>PCIe 3.0 x4</Ports>
+        </Type>
+        <Critical>true</Critical>
+    </Сomponent>
+
+    <Сomponent id="6">
+        <Name>HATOR Hypergang EVO</Name>
+        <Origin>USA</Origin>
+        <Price>1999</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>output Headphone</ComponentGroup>
+            <Ports>mini-Jack (3.5 мм)</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
+    <Сomponent id="7">
+        <Name> Asus PCE-AX1800</Name>
+        <Origin>China</Origin>
+        <Price>1289</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <EnergyConsumption>4</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>network</ComponentGroup>
+            <Ports>PCIe</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+</Device>

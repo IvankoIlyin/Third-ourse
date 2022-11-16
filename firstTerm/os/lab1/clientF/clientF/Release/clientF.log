@@ -1,0 +1,8 @@
+﻿  clientF.cpp
+D:\University\Third-ourse\firstTerm\os\lab1\clientF\clientF\clientF.cpp(17,77): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  Создание кода
+  1 of 311 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Создание кода завершено
+  clientF.vcxproj -> D:\University\Third-ourse\firstTerm\os\lab1\clientF\Release\clientF.exe

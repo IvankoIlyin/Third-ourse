@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Device" type="DeviceType"/>
+  <xs:complexType name="TypeType">
+    <xs:sequence>
+      <xs:element name="Peripheral">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="false"/>
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="EnergyConsumption">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="65"/>
+            <xs:enumeration value="27"/>
+            <xs:enumeration value="5"/>
+            <xs:enumeration value="130"/>
+            <xs:enumeration value="4"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Cooler">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="false"/>
+            <xs:enumeration value="true"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="ComponentGroup">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="processor"/>
+            <xs:enumeration value="output monitor"/>
+            <xs:enumeration value="input keyboard"/>
+            <xs:enumeration value="cooler"/>
+            <xs:enumeration value="ssd"/>
+            <xs:enumeration value="output Headphone"/>
+            <xs:enumeration value="network"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Ports">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="AM4"/>
+            <xs:enumeration value="usb"/>
+            <xs:enumeration value="4 pin PWM"/>
+            <xs:enumeration value="PCIe 3.0 x4"/>
+            <xs:enumeration value="mini-Jack (3.5 мм)"/>
+            <xs:enumeration value="PCIe"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="СomponentType">
+    <xs:sequence>
+      <xs:element name="Name">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="AMD Ryzen 5 4500 3.6(4.1)GHz 8MB sAM4 Box"/>
+            <xs:enumeration value="Asus 27&quot; TUF Gaming VG27AQ Black"/>
+            <xs:enumeration value="HATOR Starfall Outemu Red"/>
+            <xs:enumeration value="Deepcool GAMMAXX 300"/>
+            <xs:enumeration value="Kingston NV1 500GB M.2"/>
+            <xs:enumeration value="HATOR Hypergang EVO"/>
+            <xs:enumeration value=" Asus PCE-AX1800"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Origin">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="USA"/>
+            <xs:enumeration value="China"/>
+            <xs:enumeration value="Pakistan"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element name="Price">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="3599"/>
+            <xs:enumeration value="14999"/>
+            <xs:enumeration value="1459"/>
+            <xs:enumeration value="729"/>
+            <xs:enumeration value="1869"/>
+            <xs:enumeration value="1999"/>
+            <xs:enumeration value="1289"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="TypeType" name="Type"/>
+      <xs:element name="Critical">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="true"/>
+            <xs:enumeration value="false"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="id" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="DeviceType">
+    <xs:sequence>
+      <xs:element type="СomponentType" name="Сomponent" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
