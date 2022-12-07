@@ -4,7 +4,7 @@ def f1(x)
   f.to_f
 end
 def f2(x)
-  f = Math.exp(x) * Math.sin(x)
+  f = 1 / (3+2*Math.cos(x))
   f.to_f
 end
 

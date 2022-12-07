@@ -17,8 +17,6 @@ public class DeviceStAXParser {
     public void parse(){
         try {
         XMLInputFactory factory = XMLInputFactory.newInstance();
-        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_DTD, "");
-        factory.setProperty(XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
         XMLStreamReader reader = factory.createXMLStreamReader(new FileInputStream(FILENAME));
         int eventType = reader.getEventType();
             Component component=new Component(" "," "," "," "," "," "," "," "," "," ");
@@ -116,6 +114,14 @@ public class DeviceStAXParser {
         for(int i =0;i<this.device.size();i++){
             device.get(i).printComponent();
         }
+    }
+
+    Vector<Component> getDevice(){
+        return this.device;
+    }
+
+    public void sortDyId(){
+        this.device.sort((a,b)->a.getId().compareTo(b.getId()));
     }
 
 }

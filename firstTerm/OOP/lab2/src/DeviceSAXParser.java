@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
@@ -26,6 +27,14 @@ public class DeviceSAXParser {
         for(int i =0;i<this.device.size();i++){
             device.get(i).printComponent();
         }
+    }
+
+    Vector<Component> getDevice(){
+        return this.device;
+    }
+
+    public void sortDyId(){
+        this.device.sort((a,b)->a.getId().compareTo(b.getId()));
     }
 }
 

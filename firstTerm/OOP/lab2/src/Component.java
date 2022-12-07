@@ -1,18 +1,17 @@
 
 public class Component {
-    private static String id;
-    private static String name;
-    private static String origin;
-    private static String price;
-    private static String peripheral;
-    private static String energyConsumption;
-    private static String cooler;
-    private static String componentGroup;
-    private static String ports;
-    private static String critical;
-
+    public  String id;
+    private  String name;
+    private  String origin;
+    private  String price;
+    private  String peripheral;
+    private  String energyConsumption;
+    private  String cooler;
+    private  String componentGroup;
+    private  String ports;
+    private  String critical;
     public Component(String id, String name, String origin, String price, String peripheral, String energyConsumption, String cooler, String componentGroup, String ports, String critical) {
-        this.id = id;
+        this.id =id;
         this.name = name;
         this.origin = origin;
         this.price = price;
@@ -77,6 +76,34 @@ public class Component {
         System.out.println("Ports: " + this.ports);
         System.out.println("Is critical: " + this.critical);
         System.out.println("--------------------------------------");
+    }
+
+    public String getId(){
+        return this.id;
+    }
+    public String getName(){
+        return this.name;
+    }
+    public String getOrigin(){
+        return this.origin;
+    }
+    public String getPrice(){
+        return this.price;
+    }
+    public String getPeripheral(){
+        return this.peripheral;
+    }
+    public String getCooler(){
+        return this.cooler;
+    }
+    public String getComponentGroup(){
+        return this.componentGroup;
+    }
+    public String getPorts(){
+        return this.ports;
+    }
+    public String getCritical(){
+        return this.critical;
     }
 
 

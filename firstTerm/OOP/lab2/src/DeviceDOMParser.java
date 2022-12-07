@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Enumeration;
 import java.util.Vector;
@@ -15,10 +16,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 public class DeviceDOMParser {
-    private Vector<Component> device=new Vector();
+    private ArrayList<Component> device;
     private static final String FILENAME = "./src/Device.xml";
 
-    void parse() {
+
+    DeviceDOMParser(){
+        this.device=new ArrayList<>();
+    }
+    public void parse() {
         DocumentBuilderFactory factory= DocumentBuilderFactory.newInstance();
         try{
             factory.setFeature(XMLConstants.FEATURE_SECURE_PROCESSING, true);
@@ -42,25 +47,37 @@ public class DeviceDOMParser {
                     String componentGroup = element.getElementsByTagName("ComponentGroup").item(0).getTextContent();
                     String ports = element.getElementsByTagName("Ports").item(0).getTextContent();
                     String critical = element.getElementsByTagName("Critical").item(0).getTextContent();
-
-                    Component component = new Component(id,name,origin,price,peripheral,energyConsumption,cooler,componentGroup,ports,critical);
-                    device.addElement(component);
-
+                    //Component component = new Component(id,name,origin,price,peripheral,energyConsumption,cooler,componentGroup,ports,critical);
+                    this.device.add( new Component(id,name,origin,price,peripheral,energyConsumption,cooler,componentGroup,ports,critical));
+                    //component.printComponent();
+                    //this.device.get(Integer.parseInt(id)-1).printComponent();
                 }
             }
-
 
         }
         catch (ParserConfigurationException | SAXException | IOException e) {
             e.printStackTrace();
         }
+
     }
 
-    void printDevicesComponents(){
-        for(int i =0;i<this.device.size();i++){
-            device.get(i).printComponent();
-        }
+    ArrayList<Component> getDevice(){
+        return this.device;
     }
+
+    public void printDevicesComponents(){
+        for(Component i:this.device){
+            i.printComponent();
+        }
+       // System.out.println(device);
+
+
+    }
+
+    public void sortDyId(){
+        this.device.sort((a,b)->a.getId().compareTo(b.getId()));
+    }
+
 }
 
 

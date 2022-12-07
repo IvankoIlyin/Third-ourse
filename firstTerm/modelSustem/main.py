@@ -28,8 +28,7 @@ fourierTransform = np.zeros(N, dtype='complex_')
 
 for i in range(0, N):
     for j in range(0, N):
-        fourierTransform[i] += 1.0 / N * data[j] * (math.cos(-1 * 2 * math.pi * i * j / N) +
-                                                    complex(0, 1) * math.sin(-1 * 2 * math.pi * i * j / N))
+        fourierTransform[i] += 1.0 / N * data[j] * (math.cos(-1 * 2 * math.pi * i * j / N) + complex(0, 1) * math.sin(-1 * 2 * math.pi * i * j / N))
 
 fourierTransform = np.abs(fourierTransform)
 plt.plot(frequencies, fourierTransform[0: int(N / 2)])
@@ -72,8 +71,7 @@ A = np.array([
         np.sum(xAxis ** 3),
         np.sum(xAxis ** 2),
         np.sum(xAxis),
-        np.sum(sinFunc * N),
-        N]),
+        np.sum(sinFunc * N), N]),
 ])
 
 c = np.array([

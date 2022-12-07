@@ -18,8 +18,9 @@ public class Disk {
         for (int i = 0; i < songs.size(); i++) {
             songs.get(i).printSong(disk);
         }
-
-        System.out.println("Duration of Playlist: " + durationPlayList);
+        calculateDuration();
+        String dur=String.format("%.3f",durationPlayList);
+        System.out.println("Duration of playlist: "+ dur);
         JSONObject duration = new JSONObject();
         duration.put("Duration:", durationPlayList);
         disk.add(duration);
@@ -44,6 +45,7 @@ public class Disk {
                 byTime.add(songs.get(i));
             }
         }
+        System.out.println("---------Songs between "+min+" and "+max+"---------");
         for (int i = 0; i < byTime.size(); i++) {
             byTime.get(i).printSong(disk);
         }
@@ -58,6 +60,7 @@ public class Disk {
     public void sortByStyle() {
         songs.sort((a, b) -> a.getStyle().compareTo(b.getStyle()));
     }
+
 
 
 

@@ -14,8 +14,22 @@
         <Critical>true</Critical>
     </Сomponent>
 
+    <Сomponent id="7">
+        <Name>Asus PCE-AX1800</Name>
+        <Origin>China</Origin>
+        <Price>1289</Price>
+        <Type>
+            <Peripheral>false</Peripheral>
+            <EnergyConsumption>4</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>network</ComponentGroup>
+            <Ports>PCIe</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
     <Сomponent id="2">
-        <Name>Asus 27" TUF Gaming VG27AQ Black</Name>
+        <Name>Asus 27 TUF Gaming VG27AQ Black</Name>
         <Origin>China</Origin>
         <Price>14999</Price>
         <Type>
@@ -24,34 +38,6 @@
             <Cooler>false</Cooler>
             <ComponentGroup>output monitor</ComponentGroup>
             <Ports>usb</Ports>
-        </Type>
-        <Critical>false</Critical>
-    </Сomponent>
-
-    <Сomponent id="3">
-        <Name>HATOR Starfall Outemu Red</Name>
-        <Origin>Pakistan</Origin>
-        <Price>1459</Price>
-        <Type>
-            <Peripheral>true</Peripheral>
-            <EnergyConsumption>5</EnergyConsumption>
-            <Cooler>false</Cooler>
-            <ComponentGroup>input keyboard</ComponentGroup>
-            <Ports>usb</Ports>
-        </Type>
-        <Critical>false</Critical>
-    </Сomponent>
-
-    <Сomponent id="4">
-        <Name>Deepcool GAMMAXX 300</Name>
-        <Origin>China</Origin>
-        <Price>729</Price>
-        <Type>
-            <Peripheral>false</Peripheral>
-            <EnergyConsumption>130</EnergyConsumption>
-            <Cooler>true</Cooler>
-            <ComponentGroup>cooler</ComponentGroup>
-            <Ports>4 pin PWM</Ports>
         </Type>
         <Critical>false</Critical>
     </Сomponent>
@@ -70,6 +56,20 @@
         <Critical>true</Critical>
     </Сomponent>
 
+    <Сomponent id="3">
+        <Name>HATOR Starfall Outemu Red</Name>
+        <Origin>Pakistan</Origin>
+        <Price>1459</Price>
+        <Type>
+            <Peripheral>true</Peripheral>
+            <EnergyConsumption>5</EnergyConsumption>
+            <Cooler>false</Cooler>
+            <ComponentGroup>input keyboard</ComponentGroup>
+            <Ports>usb</Ports>
+        </Type>
+        <Critical>false</Critical>
+    </Сomponent>
+
     <Сomponent id="6">
         <Name>HATOR Hypergang EVO</Name>
         <Origin>USA</Origin>
@@ -84,17 +84,19 @@
         <Critical>false</Critical>
     </Сomponent>
 
-    <Сomponent id="7">
-        <Name> Asus PCE-AX1800</Name>
+    <Сomponent id="4">
+        <Name>Deepcool GAMMAXX 300</Name>
         <Origin>China</Origin>
-        <Price>1289</Price>
+        <Price>729</Price>
         <Type>
             <Peripheral>false</Peripheral>
-            <EnergyConsumption>4</EnergyConsumption>
-            <Cooler>false</Cooler>
-            <ComponentGroup>network</ComponentGroup>
-            <Ports>PCIe</Ports>
+            <EnergyConsumption>130</EnergyConsumption>
+            <Cooler>true</Cooler>
+            <ComponentGroup>cooler</ComponentGroup>
+            <Ports>4 pin PWM</Ports>
         </Type>
         <Critical>false</Critical>
     </Сomponent>
+
+
 </Device>

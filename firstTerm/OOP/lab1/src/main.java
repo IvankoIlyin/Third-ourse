@@ -57,7 +57,7 @@ public class main {
         l = new LoFi("Winter sunset", 2.13, "Mt Fujitive");
         disk.songs.add(l);
 
-
+        disk.printPlayList();
         disk.printFindingByTime(3.0,3.30);
 
 
