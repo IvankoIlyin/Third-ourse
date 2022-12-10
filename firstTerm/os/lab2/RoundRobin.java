@@ -22,11 +22,11 @@ public class RoundRobin {
         try{
             PrintStream out = new PrintStream(new FileOutputStream(resultsFile));
             sProcess process = (sProcess) processVector.elementAt(currentProcess);
-            out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
+            out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + " " +process.quantum + ")");
             while(comptime<=runtime){
-                if(process.cpudone == process.cputime){
+                if(process.cpudone == process.cputime || process.quantum<=timeSlice){
                     completed+=1;
-                    out.println("Process: " + process.id + " completed... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
+                    out.println("Process: " + process.id + " completed... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + " " +process.quantum + ")");
                     if(completed==size){
                         result.compuTime=comptime;
                         out.close();
@@ -34,16 +34,16 @@ public class RoundRobin {
                     }
                     process = processes.removeFirst();
                     currentProcess+=1;
-                    out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
+                    out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + " " +process.quantum +")");
                 }
                 if(process.quantum>timeSlice){
-                    out.println("Process: " + process.id + " spent it`s quantum... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
+                    out.println("Process: " + process.id + " spent it`s quantum... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + " " +process.quantum + ")");
                     process.numblocked+=1;
                     process.quantum=process.quantum-timeSlice;
                     processes.addLast(process);
                     process = processes.removeFirst();
                     currentProcess+=1;
-                    out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
+                    out.println("Process: " + process.id + " registered... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + " " +process.quantum + ")");
                 }
                 if(process.ioblocking == process.ionext){
                     out.println("Process: " + process.id + " I/O blocked... (" + process.cputime + " " + process.ioblocking + " " + process.cpudone + " " + process.cpudone + ")");
