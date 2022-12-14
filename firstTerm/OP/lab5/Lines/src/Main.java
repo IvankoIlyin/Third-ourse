@@ -85,8 +85,8 @@ class Monitor {
     private boolean isEqual = false;
     private MyThread[] threads;
 
-    Monitor(MyThread[] threads) {
-        this.threads = threads;
+    Monitor(MyThread[] thread) {
+        this.threads = thread;
     }
 
     public void main() {
