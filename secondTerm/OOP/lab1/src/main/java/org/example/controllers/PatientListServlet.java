@@ -28,6 +28,7 @@ import java.util.logging.Logger;
 @RequiredArgsConstructor
 public class PatientListServlet extends HttpServlet {
     private final Connection conn;
+    private String role;
     private Cookie cookie;
     ArrayList<Patient> patients;
     private final PatientDao patientDao;
@@ -36,11 +37,16 @@ public class PatientListServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         for (Patient i: this.patients){
-            String curr_procedures=req.getParameter(i.getId()+"_procedures").toString();
-            String curr_diagnosis=req.getParameter(i.getId()+"_diagnosis").toString();
             String curr_medicines=req.getParameter(i.getId()+"_medicines").toString();
-            String curr_operations=req.getParameter(i.getId()+"_operations").toString();
-            String curr_health_status=req.getParameter(i.getId()+"_health_status").toString();
+            String curr_procedures=req.getParameter(i.getId()+"_procedures").toString();
+            String curr_diagnosis=i.getDiagnosis();
+            String curr_operations=i.getOperations();
+            String curr_health_status=i.getHealth_status();
+            if(role.equals("doctor")) {
+                 curr_diagnosis = req.getParameter(i.getId() + "_diagnosis").toString();
+                 curr_operations = req.getParameter(i.getId() + "_operations").toString();
+                 curr_health_status = req.getParameter(i.getId() + "_health_status").toString();
+            }
             Patient curr_patient = new Patient(i.getId(),i.getName(),curr_procedures,curr_diagnosis,curr_medicines,curr_operations,curr_health_status);
             patientDao.update(curr_patient);
         }
@@ -62,7 +68,7 @@ public class PatientListServlet extends HttpServlet {
 
         String cookie_id = cookie.getValue();
         Optional<User> optionalUser = userDao.get_by_id(cookie_id);
-        String role= optionalUser.get().getRole();
+        role= optionalUser.get().getRole();
         String link = null;
         if(role.equals("doctor")){link="patient_list_doctor.ftl";}
         else if(role.equals("nurse")){link="patient_list_nurse.ftl";}
