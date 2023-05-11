@@ -61,10 +61,10 @@
 <body class="text-center">
 <form class="form-signin center" action="/login" method="post">
     <label for="inputEmail" class="sr-only">Email:</label>
-    <input type="email" maxlength="100" id="inputEmail" name="login" class="form-control" placeholder="Email address" required autofocus>
+    <input value="" type="email" maxlength="100" id="inputEmail" name="login" class="form-control" placeholder="Email address" required autofocus>
     <br>
     <label for="inputPassword" class="sr-only">Password:</label>
-    <input type="password"  maxlength="10" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    <input value="" type="password"  maxlength="10" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 

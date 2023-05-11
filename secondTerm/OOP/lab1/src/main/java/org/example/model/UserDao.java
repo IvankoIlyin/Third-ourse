@@ -29,19 +29,38 @@ public class UserDao implements Dao<User>{
         PreparedStatement statement = conn.prepareStatement("select * from users where mail = ?");
         statement.setString(1, mail);
         ResultSet res = statement.executeQuery();
+        String id;
         String _mail;
         String password;
         String role;
         User user = null;
         if (res.next()) {
+            id = res.getString("user_id");
             _mail = res.getString("mail");
             password = res.getString("password");
             role = res.getString("role");
-            user = new User(_mail,password,role);
+            user = new User(id,_mail,password,role);
         }
         return Optional.ofNullable(user);
     }
 
+    @SneakyThrows
+    public Optional<User> get_by_id(String id){
+        PreparedStatement statement = conn.prepareStatement("select * from users where user_id = ?");
+        statement.setInt(1, Integer.parseInt(id));
+        ResultSet res = statement.executeQuery();
+        String mail;
+        String password;
+        String role;
+        User user = null;
+        if (res.next()) {
+            mail = res.getString("mail");
+            password = res.getString("password");
+            role = res.getString("role");
+            user = new User(id,mail,password,role);
+        }
+        return Optional.ofNullable(user);
+    }
     @SneakyThrows
     @Override
     public ArrayList<User> getAll() {
@@ -50,10 +69,11 @@ public class UserDao implements Dao<User>{
         ArrayList<User> userList = new ArrayList<>();
         User curr = null;
         while (res.next()) {
+            String id = res.getString("user_id");
             String mail = res.getString("mail");
             String password = res.getString("password");
             String role = res.getString("role");
-            curr = new User(mail, password, role);
+            curr = new User(id,mail, password, role);
             userList.add(curr);
         }
         return userList;

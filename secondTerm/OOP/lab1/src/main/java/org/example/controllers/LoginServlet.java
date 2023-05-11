@@ -3,6 +3,7 @@ package org.example.controllers;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -42,6 +43,7 @@ public class LoginServlet extends HttpServlet {
         if(optionalUser.isPresent()){
             User user = optionalUser.get();
             if(user.getPassword().equals(curr_password)){
+                resp.addCookie(new Cookie("id",user.getId()));
                 resp.sendRedirect("/patients");
                 log.info("User "+curr_login+" redirect to /patients");
             }

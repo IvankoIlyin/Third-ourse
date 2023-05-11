@@ -8,6 +8,7 @@ import org.example.controllers.PatientListServlet;
 import org.example.controllers.TestServlet;
 import org.example.model.PatientDao;
 import org.example.model.User;
+import org.example.model.UserDao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,12 +17,14 @@ import java.sql.ResultSet;
 
 
 //http://localhost:1488/login
+//http://localhost:1488/test
 public class App {
     public static void main(String[] args) throws Exception {
 
 
 
         Server server = new Server(1488);
+
         ServletContextHandler handler = new ServletContextHandler();
 
 
@@ -33,7 +36,7 @@ public class App {
 
         handler.addServlet(new ServletHolder(new LoginServlet(conn)),"/login");
         handler.addServlet(new ServletHolder(new TestServlet(conn)),"/test");
-        handler.addServlet(new ServletHolder(new PatientListServlet(conn, new PatientDao())), "/patients");
+        handler.addServlet(new ServletHolder(new PatientListServlet(conn, new PatientDao(),new UserDao())), "/patients");
         server.setHandler(handler);
         server.start();
     }

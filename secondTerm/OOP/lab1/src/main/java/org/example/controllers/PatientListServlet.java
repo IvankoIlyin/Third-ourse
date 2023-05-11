@@ -3,6 +3,7 @@ package org.example.controllers;
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -10,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.example.model.Patient;
 import org.example.model.PatientDao;
+import org.example.model.User;
+import org.example.model.UserDao;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,13 +20,19 @@ import java.io.PrintWriter;
 import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Optional;
+import java.util.logging.Logger;
 
 @RequiredArgsConstructor
 public class PatientListServlet extends HttpServlet {
     private final Connection conn;
+    private Cookie cookie;
     ArrayList<Patient> patients;
     private final PatientDao patientDao;
+    private final UserDao userDao;
+    private static final Logger log = Logger.getLogger(String.valueOf(LoginServlet.class));
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         for (Patient i: this.patients){
@@ -48,23 +57,23 @@ public class PatientListServlet extends HttpServlet {
         patients = patientDao.getAll();
         prepare_list();
         data.put("patients",patients);
+        cookie = Optional.ofNullable(req.getCookies())
+                .flatMap(cc -> Arrays.stream(cc).filter(c1 -> c1.getName().equals("id")).findFirst()).get();
 
-        int a =1;
-        if(a==1){
+        String cookie_id = cookie.getValue();
+        Optional<User> optionalUser = userDao.get_by_id(cookie_id);
+        String role= optionalUser.get().getRole();
+        String link = null;
+        if(role.equals("doctor")){link="patient_list_doctor.ftl";}
+        else if(role.equals("nurse")){link="patient_list_nurse.ftl";}
+        else{resp.sendRedirect("/login");}
+
+
             try (PrintWriter w = resp.getWriter()) {
-                conf.getTemplate("patient_list_doctor.ftl").process(data, w);
+                conf.getTemplate(link).process(data, w);
             } catch (TemplateException x) {
                 throw new RuntimeException(x);
             }
-        }
-        if(a==0){
-            try (PrintWriter w = resp.getWriter()) {
-                conf.getTemplate("patient_list_nurse.ftl").process(data, w);
-            } catch (TemplateException x) {
-                throw new RuntimeException(x);
-            }
-        }
-
     }
     private void prepare_list(){
         for (Patient i:this.patients){

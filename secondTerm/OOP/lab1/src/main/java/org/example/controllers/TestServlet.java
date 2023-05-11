@@ -34,13 +34,9 @@ public class TestServlet extends HttpServlet {
     @SneakyThrows
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//        String curr_login = req.getParameter("login").toString();
-//        String curr_password = req.getParameter("password").toString();
-//        PatientDao patientDao = new PatientDao();
-//        Patient patient = new Patient("Billy","kill","Hero","LSD2","lalala","no");
-//        Optional<Patient> optionalPatient = patientDao.get("Leo");
-//        patient = optionalPatient.get();
-//        System.out.println(patient.getDiagnosis());
+        UserDao userDao = new UserDao();
+        Optional<User> optionalUser = userDao.get_by_id("2");
+        System.out.println(optionalUser);
 
     }
 }
