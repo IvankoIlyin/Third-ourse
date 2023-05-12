@@ -44,5 +44,8 @@
     </#list>
     <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
 </form>
+<form action="/logout" method="get">
+    <button class="btn btn-lg btn-primary btn-block" type="submit" >Logout</button>
+</form>
 </body>
 </html>

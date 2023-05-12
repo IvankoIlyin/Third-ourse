@@ -34,7 +34,7 @@
     </#list>
     <button class="btn btn-lg btn-primary btn-block" type="submit">OK</button>
 </form>
-<form method="get" action="..src/main/org.example/controllers/LogoutServlet.java">
+<form action="/logout" method="get">
     <button class="btn btn-lg btn-primary btn-block" type="submit" >Logout</button>
 </form>
 </body>

@@ -2,6 +2,8 @@ package org.example.controllers;
 
 import freemarker.template.Configuration;
 import freemarker.template.TemplateException;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServlet;
@@ -9,6 +11,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
+import org.example.filters.CheckCookieFilter;
 import org.example.model.Patient;
 import org.example.model.PatientDao;
 import org.example.model.User;
@@ -65,7 +68,6 @@ public class PatientListServlet extends HttpServlet {
         data.put("patients",patients);
         cookie = Optional.ofNullable(req.getCookies())
                 .flatMap(cc -> Arrays.stream(cc).filter(c1 -> c1.getName().equals("id")).findFirst()).get();
-
         String cookie_id = cookie.getValue();
         Optional<User> optionalUser = userDao.get_by_id(cookie_id);
         role= optionalUser.get().getRole();
