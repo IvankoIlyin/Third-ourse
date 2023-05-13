@@ -18,13 +18,17 @@
     <style>
         form {
             display: block;
-            background: #5B3C67;
-            padding: 50px;
-            width: 100%;
+            background: #F57AE8;
+            padding: 0px;
+            height: 100%;
             color: white;
-            margin-right: auto;
-            margin-left: auto;
-            text-align: center;
+            margin-left: 0;
+            text-align: left;
+        }
+        input {
+            display: inline-block;
+            width: 150px;
+            box-sizing: border-box;
         }
 
         form input {
@@ -52,7 +56,7 @@
         }
 
         body{
-            background: #3de064;
+            background: #C3FFEA;
         }
     </style>
 
