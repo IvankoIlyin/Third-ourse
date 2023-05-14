@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String curr_login = req.getParameter("login").toString();
         String curr_password = req.getParameter("password").toString();
+        req.removeAttribute("password");
         UserDao userDao = new UserDao();
         Optional<User> optionalUser = userDao.get(curr_login);
         if(optionalUser.isEmpty()){

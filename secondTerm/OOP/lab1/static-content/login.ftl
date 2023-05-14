@@ -16,49 +16,56 @@
     <link rel="stylesheet" href="/login/css/style.css">
 
     <style>
-        form {
-            display: block;
-            background: #F57AE8;
-            padding: 0px;
-            height: 100%;
-            color: white;
-            margin-left: 0;
-            text-align: left;
-        }
-        input {
-            display: inline-block;
-            width: 150px;
-            box-sizing: border-box;
+        body {
+            background-color: #f7f7f7; /* установка фона для body */
         }
 
-        form input {
-            box-sizing: border-box;
-            padding: 10px;
-            margin-bottom: 20px;
-        //margin-left: 40%;
-            width: 25%;
-            height: 35px;
-            border: 1px solid #ff8c00;
+        .form-signin {
+            max-width: 350px; /* установка максимальной ширины формы */
+            margin: 50px auto 0; /* установка отступов сверху и снизу и автоматическое выравнивание по центру по горизонтали */
+            padding: 20px; /* добавление внутреннего отступа для формы */
+            border-radius: 10px; /* скругление углов формы */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); /* добавление тени для формы */
+            background-color: #ffffff; /* установка фона для формы */
         }
 
-        .btn {
-            width: 25%;
-            font-size: 14pt;
-            color: white;
-            background: #7F113E;
-            height: 55px;
-            padding: 10px;
-            border: 1px solid #F5C4AB;
+        .form-signin label {
+            font-weight: 600; /* установка жирного шрифта для label */
         }
 
-        .btn:hover {
-            border: 1px solid white;
+        .form-control {
+            border-radius: 5px; /* скругление углов для input */
+            border: none; /* удаление рамки input */
+            background-color: #f5f5f5; /* установка фона для input */
+            box-shadow: none; /* удаление тени input */
         }
 
-        body{
-            background: #C3FFEA;
+        .btn-primary {
+            background-color: #4c84ff; /* установка цвета фона для кнопки */
+            border: none; /* удаление рамки для кнопки */
+            box-shadow: none; /* удаление тени для кнопки */
+        }
+
+        .btn-primary:hover {
+            background-color: #2b55e8; /* изменение цвета фона кнопки при наведении */
+        }
+
+        @media (max-width: 767px) {
+            .form-signin {
+                max-width: 100%; /* установка максимальной ширины формы на маленьких экранах */
+                margin: 20px 10px 0; /* установка отступов для формы на маленьких экранах */
+            }
+        }
+
+        html, body, input, button {
+            font-size: 1.2rem;
+        }
+        .form-signin input,
+        .form-signin button {
+            margin-bottom: 10px; /* Add 10px margin to bottom of input fields and button */
         }
     </style>
+
 
 </head>
 
@@ -68,7 +75,7 @@
     <input value="" type="email" maxlength="100" id="inputEmail" name="login" class="form-control" placeholder="Email address" required autofocus>
     <br>
     <label for="inputPassword" class="sr-only">Password:</label>
-    <input value="" type="password"  maxlength="10" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+    <input autocomplete="off" type="password"  maxlength="10" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
     <br>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
