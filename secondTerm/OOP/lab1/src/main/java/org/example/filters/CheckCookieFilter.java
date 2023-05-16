@@ -22,10 +22,13 @@ public class CheckCookieFilter implements HttpFilter {
                 .flatMap(cookies1 ->
                         Arrays.stream(cookies1).filter(cookie ->
                                 cookie.getName().equals("id")).findFirst());
-        if (cookieId.isPresent())
+        if (cookieId.isPresent()) {
             filterChain.doFilter(request, response);
-        else
+            log.info("Coockie is good");
+        }
+        else {
             log.info("Coockie is empty");
             response.sendRedirect("/login");
+        }
     }
 }

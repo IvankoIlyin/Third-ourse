@@ -46,6 +46,7 @@ public class LoginServlet extends HttpServlet {
             if(user.getPassword().equals(curr_password)){
                 resp.addCookie(new Cookie("id",user.getId()));
                 resp.sendRedirect("/patients");
+                log.info("Login");
                 log.info("User "+curr_login+" redirect to /patients");
             }
             else {

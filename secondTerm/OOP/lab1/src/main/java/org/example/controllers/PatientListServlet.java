@@ -53,6 +53,7 @@ public class PatientListServlet extends HttpServlet {
             Patient curr_patient = new Patient(i.getId(),i.getName(),curr_procedures,curr_diagnosis,curr_medicines,curr_operations,curr_health_status);
             patientDao.update(curr_patient);
         }
+        log.info("list updated");
         resp.sendRedirect("/patients");
     }
 
@@ -72,9 +73,9 @@ public class PatientListServlet extends HttpServlet {
         Optional<User> optionalUser = userDao.get_by_id(cookie_id);
         role= optionalUser.get().getRole();
         String link = null;
-        if(role.equals("doctor")){link="patient_list_doctor.ftl";}
-        else if(role.equals("nurse")){link="patient_list_nurse.ftl";}
-        else{resp.sendRedirect("/login");}
+        if(role.equals("doctor")){link="patient_list_doctor.ftl"; log.info("User is doctor");}
+        else if(role.equals("nurse")){link="patient_list_nurse.ftl";log.info("User is nurse");}
+        else{resp.sendRedirect("/login");log.info("Problems with redirest");}
 
 
             try (PrintWriter w = resp.getWriter()) {
