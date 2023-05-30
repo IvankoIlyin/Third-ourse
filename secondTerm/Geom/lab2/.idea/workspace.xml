@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cd533bb2-1b22-44e2-9b94-38095aabf2a3" name="Changes" comment="" />
+    <list default="true" id="cd533bb2-1b22-44e2-9b94-38095aabf2a3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab3/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/target/classes/log4j.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +30,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "last_opened_file_path": "D:/University/Third-ourse/secondTerm/Geom/lab1"
+    "last_opened_file_path": "D:/University/Third-ourse/secondTerm/Geom/lab3"
   }
 }]]></component>
   <component name="RunManager">

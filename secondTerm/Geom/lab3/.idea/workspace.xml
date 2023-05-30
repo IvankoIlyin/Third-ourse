@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="617dae09-45ba-4d7e-8062-f3e56359857f" name="Changes" comment="" />
+    <list default="true" id="617dae09-45ba-4d7e-8062-f3e56359857f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../lab1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/src/main/resources/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/src/main/resources/log4j.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../OOP/lab1/target/classes/log4j.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../OOP/lab1/target/classes/log4j.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +32,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/University/Third-ourse/secondTerm/Geom/lab2"
+    "last_opened_file_path": "D:/University/Third-ourse/secondTerm/Geom/lab3"
   }
 }]]></component>
   <component name="RunManager">

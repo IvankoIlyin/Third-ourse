@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Я Школяр</string>
+    <string name="nav_header_subtitle"></string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Налаштування</string>
+    <string name="activity_note_home">Нотатки</string>
+    <string name="nav_jingle_title">Нотатки</string>
+    <string name="msg_no_notes">Записів не знайдено!</string>
+    <string name="hint_enter_note">Введіть свою нотатку!</string>
+
+
+    <!-- MENU -->
+    <string name="item_rozklad">Розклад</string>
+    <string name="item_homework">Домашнє завдання</string>
+    <string name="item_note">Нотатки</string>
+    <string name="item_setting">Налаштування</string>
+    <string name="item_jingle">Дзвінки</string>
+    <string name="item_teacher">Вчителі</string>
+    <string name="item_test_db">Відкрити БД</string>
+
+
+    <!-- DIALOG-->
+    <string name="add_lsn_title">Додати урок</string>
+    <string name="add_new_jingle_title">Новий розклад дзвінків</string>
+    <string name="edit_lsn_title">Редагувати урок</string>
+    <string name="cm_edit_lesson">Редагувати</string>
+    <string name="cm_delete_lesson">Вилучити</string>
+    <string name="add_hw_title">Додати ДЗ</string>
+    <string name="edit_hw_title">Редагувати ДЗ</string>
+    <string name="edit_jingle_time_title">Редагувати час дзвінка</string>
+    <string name="cm_edit_homework">Редагувати</string>
+    <string name="cm_delete_homework">Вилучити</string>
+    <string name="cm_done_homework">Виконано</string>
+    <string name="cm_delete_photo_hw">Вилучити фото</string>
+    <string name="lbl_new_note_title">Нова нотатка</string>
+    <string name="lbl_edit_note_title">Редагувати нотатку</string>
+    <string name="lbl_new_teacher_title">Додати вчителя</string>
+    <string name="lbl_edit_teacher_title">Редагувати запис</string>
+    <string name="hint_surname_teacher">Введіть прізвище</string>
+    <string name="hint_name_teacher">Введіть ім\'я</string>
+    <string name="hint_lastname_teacher">Введіть побатькові</string>
+    <string name="hint_subject">Предмет, який викладає вчитель</string>
+    <string name="hint_jingle_type_btn">Натисніть, щоб побачити розклад дзвінків</string>
+    <string name="hint_jingle_pos">№ уроку</string>
+    <string name="hint_jingle_bgn">Час початку</string>
+    <string name="hint_jingle_end">Час закінчення</string>
+    <string name="hint_fab_new_name">Назва нового розкладу</string>
+<!--    <string name="hint_fab_new_jingle_count_lesson">Кількість уроків</string>-->
+<!--    <string name="hint_fab_new_jingle_time_first">Час початку першого уроку</string>-->
+<!--    <string name="hint_fab_new_jingle_lng_lsn">Тривалість уроку</string>-->
+<!--    <string name="hint_fab_new_jingle_ffl">між 1-м і 2-м </string>-->
+<!--    <string name="hint_fab_new_jingle_fsl">між 2-м і 3-м </string>-->
+<!--    <string name="hint_fab_new_jingle_ftl">між 3-м і 4-м</string>-->
+<!--    <string name="hint_fab_new_jingle_ffrl">між 4-м і 5-м</string>-->
+<!--    <string name="hint_fab_new_jingle_ffvl">між 5-м і 6-м</string>-->
+<!--    <string name="hint_fab_new_jingle_fsxl">між 6-м і 7-м</string>-->
+<!--    <string name="hint_fab_new_jingle_fsvl">між 7-м і 8-м</string>-->
+
+    <string name="cm_add_homework">Додати ДЗ</string>
+
+
+    <!-- BUTTON -->
+    <string name="btn_okey">ОК</string>
+    <string name="btn_add">Додати</string>
+    <string name="btn_cancel">Скасувати</string>
+</resources>

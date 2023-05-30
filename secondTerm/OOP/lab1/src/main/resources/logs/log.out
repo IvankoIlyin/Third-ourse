@@ -1,0 +1,4 @@
+2023-05-24 14:08:33 INFO  Server:384 - jetty-11.0.13; built: 2022-12-07T20:47:15.149Z; git: a04bd1ccf844cf9bebc12129335d7493111cbff6; jvm 19+36-2238
+2023-05-24 14:08:33 INFO  ContextHandler:906 - Started o.e.j.s.ServletContextHandler@68e5eea7{/,null,AVAILABLE}
+2023-05-24 14:08:33 INFO  AbstractConnector:376 - Started ServerConnector@5702b3b1{HTTP/1.1, (http/1.1)}{0.0.0.0:1488}
+2023-05-24 14:08:33 INFO  Server:439 - Started Server@145f66e3{STARTING}[11.0.13,sto=0] @613ms
