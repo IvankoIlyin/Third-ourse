@@ -1,6 +1,0 @@
-CREATE TABLE teachers (
-	_id	INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
-	surname	TEXT NOT NULL,
-	name	TEXT,
-	lastName	TEXT
-);
