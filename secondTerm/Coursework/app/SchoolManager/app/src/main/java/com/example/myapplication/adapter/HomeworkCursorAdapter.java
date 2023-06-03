@@ -74,7 +74,7 @@ public class HomeworkCursorAdapter extends CursorAdapter {
                 context.startActivity(photoIntent);
             }
         });
-        /*TODO проблема появляется фото при его отсутствии*/
+
 
 
     }
