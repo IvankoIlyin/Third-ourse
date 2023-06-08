@@ -50,4 +50,11 @@ public class PatientService implements Dao<Patient> {
         repo.deleteById(id);
         return false;
     }
+
+    @Override
+    public boolean update(Patient entity) {
+        delete(entity.getId());
+        save(entity);
+        return true;
+    }
 }

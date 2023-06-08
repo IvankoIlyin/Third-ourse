@@ -5,7 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cd97320c-c435-4244-8734-8af6e7aec28b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/5ff0dfe5-1aef-4e75-9bb9-ab1ca88adad8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/5ff0dfe5-1aef-4e75-9bb9-ab1ca88adad8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/Lab2Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/Lab2Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/repo/PatientRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/repo/PatientRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/repo/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/java/com/example/lab2/repo/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/resources/templates/patient_list_doctor.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/resources/templates/patient_list_doctor.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/src/main/resources/templates/patient_list_nurse.ftl" beforeDir="false" afterPath="$PROJECT_DIR$/../lab2/src/main/resources/templates/patient_list_nurse.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +134,11 @@
       <workItem from="1684918293373" duration="4303000" />
       <workItem from="1685349554837" duration="92000" />
       <workItem from="1685987469850" duration="3004000" />
+      <workItem from="1686066490917" duration="616000" />
+      <workItem from="1686079303847" duration="39000" />
+      <workItem from="1686128737270" duration="619000" />
+      <workItem from="1686215323651" duration="17000" />
+      <workItem from="1686222622852" duration="2936000" />
     </task>
     <servers />
   </component>

@@ -48,4 +48,11 @@ public class UserService implements Dao<User>{
         repo.deleteById(id);
         return false;
     }
+
+    @Override
+    public boolean update(User entity) {
+        delete(entity.getId());
+        save(entity);
+        return true;
+    }
 }

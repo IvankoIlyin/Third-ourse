@@ -13,4 +13,5 @@ public interface Dao<E> {
     boolean save(E entity);
     boolean delete(E entity);
     boolean delete(Long id);
+    boolean update(E entity);
 }
